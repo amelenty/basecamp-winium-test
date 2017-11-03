@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,7 @@ public class CalculatorTest {
 
     @BeforeClass
     public static void start() {
+        ChromeDriverManager.getInstance().setup();
         driver = new ChromeDriver();
         driver.get("file:///D:/work/GlobalLogic/Trainings/BootCamp/code/calc.html");
     }
