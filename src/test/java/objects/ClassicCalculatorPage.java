@@ -2,7 +2,6 @@ package objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.yandex.qatools.allure.annotations.Step;
 
 import java.io.File;
 
@@ -106,11 +105,9 @@ public class ClassicCalculatorPage {
         driver.findElement(button_equal).click();
     }
 
-    @Step
     public void clear() {
         driver.findElement(button_clear).click();
     }
-
 
     public String getResult() {
         return driver.findElement(result_box).getAttribute("value");
