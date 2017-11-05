@@ -106,7 +106,7 @@ public class ClassicCalculatorPage {
         driver.findElement(button_equal).click();
     }
 
-
+    @Step
     public void clear() {
         driver.findElement(button_clear).click();
     }

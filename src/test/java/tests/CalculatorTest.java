@@ -1,3 +1,5 @@
+package tests;
+
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.junit.*;
 import org.openqa.selenium.By;

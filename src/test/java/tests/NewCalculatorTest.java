@@ -4,8 +4,12 @@ import objects.CalculatorPage;
 import objects.ClassicCalculatorPage;
 import objects.Keys;
 import org.junit.*;
+import ru.yandex.qatools.allure.annotations.Features;
+import ru.yandex.qatools.allure.annotations.Stories;
 
 
+@Stories("Simple calculator actions")
+@Features("Basic actions")
 public class NewCalculatorTest extends BaseTest {
 
     static ClassicCalculatorPage calc = new ClassicCalculatorPage(driver);
