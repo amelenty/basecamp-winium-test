@@ -22,7 +22,7 @@ public class NewCalculatorTest extends BaseTest {
         calc.clear();
     }
 
-    @Test
+    @Test@Ignore
     public void add_test() {
         calc.click_2();
         calc.click_plus();
@@ -31,7 +31,7 @@ public class NewCalculatorTest extends BaseTest {
         Assert.assertEquals("7", calc.getResult());
     }
 
-    @Test
+    @Test@Ignore
     public void subtract_test() {
         calc.click("2");
         calc.click("-");
@@ -40,7 +40,7 @@ public class NewCalculatorTest extends BaseTest {
         Assert.assertEquals("-3", calc.getResult());
     }
 
-    @Test
+    @Test@Ignore
     public void multiply_test() {
         calc.click(Keys.TWO);
         calc.click(Keys.MULTIPLY);
@@ -49,7 +49,7 @@ public class NewCalculatorTest extends BaseTest {
         Assert.assertEquals("10", calc.getResult());
     }
 
-    @Test
+    @Test@Ignore
     public void divide_test() {
         CalculatorPage cal = new CalculatorPage(driver);
 //        driver.findElement(By.xpath("//input[@value='1']")).click();

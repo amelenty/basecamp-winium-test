@@ -14,8 +14,7 @@ public class BaseTest {
     @BeforeClass
     public static void start() {
         ChromeDriverManager.getInstance().setup();
-        ChromeOptions opt = new ChromeOptions().setHeadless(true);
-        driver = new ChromeDriver(opt);
+        driver = new ChromeDriver();
     }
 
     @AfterClass
