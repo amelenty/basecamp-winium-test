@@ -1,6 +1,7 @@
 <aspectj>
     <weaver>
-        <include within="tests..*"/>
-        <include within="objects..*"/>
+      <!--   <include within="tests..*"/>
+        <include within="objects..*"/> -->
+        <include within="*"/>
     </weaver>
 </aspectj>
