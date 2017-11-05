@@ -8,8 +8,6 @@ import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.Stories;
 
 
-@Stories("Simple calculator actions")
-@Features("Basic actions")
 public class NewCalculatorTest extends BaseTest {
 
     static ClassicCalculatorPage calc = new ClassicCalculatorPage(driver);
