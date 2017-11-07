@@ -6,34 +6,33 @@
      <input type="text"  id="resultsbox"  disabled="disabled">
       
     <table>  
- 
      <tr>  
-      <td><input type="button" value="7" onclick="board.resultsbox.value += '7'"></td>  
-      <td><input type="button" value="8" onclick="board.resultsbox.value += '8'"></td>  
-      <td><input type="button" value="9" onclick="board.resultsbox.value += '9'"></td>  
-      <td rowspan="2"><input type="button" onclick="board.resultsbox.value += '+'" style="height: 90px;" value ="+"></td>  
+      <td><input type="button" value="7" name="7" onclick="board.resultsbox.value += '7'"></td>  
+      <td><input type="button" value="8" name="8" onclick="board.resultsbox.value += '8'"></td>  
+      <td><input type="button" value="9" name="9"  onclick="board.resultsbox.value += '9'"></td>  
+      <td rowspan="2"><input type="button"  name="+" onclick="board.resultsbox.value += '+'" style="height: 90px;" value ="+"></td>  
      </tr>  
      <tr>  
-      <td><input type="button" value="4" onclick="board.resultsbox.value += '4'"></td>  
-      <td><input type="button" value="5" onclick="board.resultsbox.value += '5'"></td>  
-      <td><input type="button" value="6" onclick="board.resultsbox.value += '6'"></td>  
+      <td><input type="button" value="4" name="4"  onclick="board.resultsbox.value += '4'"></td>  
+      <td><input type="button" value="5" name="5"  onclick="board.resultsbox.value += '5'"></td>  
+      <td><input type="button" value="6" name="6"  onclick="board.resultsbox.value += '6'"></td>  
      </tr>  
      <tr>  
-      <td><input type="button" value="1" onclick="board.resultsbox.value += '1'"></td>  
-      <td><input type="button" value="2" onclick="board.resultsbox.value += '2'"></td>  
-      <td><input type="button" value="3" onclick="board.resultsbox.value += '3'"></td>  
+      <td><input type="button" value="1" name="1"  onclick="board.resultsbox.value += '1'"></td>  
+      <td><input type="button" value="2" name="2"  onclick="board.resultsbox.value += '2'"></td>  
+      <td><input type="button" value="3" name="3"  onclick="board.resultsbox.value += '3'"></td>  
       <td rowspan="3">
-      <input type="button" onclick="board.resultsbox.value = eval(board.resultsbox.value)" style="height: 138px;" value ="="></td>  
+      <input type="button"  name="=" onclick="board.resultsbox.value = eval(board.resultsbox.value)" style="height: 138px;" value ="="></td>  
      </tr>  
      <tr>  
-      <td><input type="button"   value="0" onclick="board.resultsbox.value += '0'"></td>  
-      <td><input type="button" value="."   onclick="board.resultsbox.value += '.' "></td>  
-      <td><input type="button" value="-"   onclick="board.resultsbox.value += '-'" ></td> 
+      <td><input type="button" value="0" name="0"  onclick="board.resultsbox.value += '0'"></td>  
+      <td><input type="button" value="." name="."  onclick="board.resultsbox.value += '.' "></td>  
+      <td><input type="button" value="-" name="-"  onclick="board.resultsbox.value += '-'" ></td> 
      </tr>  
          <tr>  
-      <td><input type="button" value="C"   onclick="board.resultsbox.value = ''"></td>  
-      <td><input type="button" value="/"   onclick="board.resultsbox.value += '/'"></td>  
-      <td><input type="button" value="x"   onclick="board.resultsbox.value += '*'"></td>  
+      <td><input type="button" value="C"  name="C" onclick="board.resultsbox.value = ''"></td>  
+      <td><input type="button" value="/"  name="/" onclick="board.resultsbox.value += '/'"></td>  
+      <td><input type="button" value="x"  name="x" onclick="board.resultsbox.value += '*'"></td>  
  
      </tr>  
     </table>  

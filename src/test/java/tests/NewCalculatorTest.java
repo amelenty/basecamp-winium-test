@@ -23,8 +23,7 @@ public class NewCalculatorTest extends BaseTest {
     }
 
     @Test
-    @Stories("Add values story")
-    @Features("Calculator functions")
+
     public void add_test() {
         calc.click_2();
         calc.click_plus();

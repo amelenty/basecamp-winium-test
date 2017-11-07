@@ -1,6 +1,8 @@
 package tests
 
 import objects.Keys
+import ru.yandex.qatools.allure.annotations.Features
+import ru.yandex.qatools.allure.annotations.Stories
 import spock.lang.Unroll
 
 class CalculatorSpec extends BaseSpec {
@@ -9,6 +11,8 @@ class CalculatorSpec extends BaseSpec {
         c_calc.open();
     }
 
+    @Stories("Add values")
+    @Features("Calculator functions")
     def "Test Calculator"() {
         given:
         c_calc.clear()
@@ -25,6 +29,8 @@ class CalculatorSpec extends BaseSpec {
         c_calc.getResult() == "46"
     }
 
+    @Stories("Data driven test for all allowed operations")
+    @Features("Calculator functions")
     @Unroll
     def "Calculator test [#expression = #expected]"() {
         setup:
@@ -44,8 +50,5 @@ class CalculatorSpec extends BaseSpec {
         "1x1"               | "1"
         "1.01+1.02"         | "2.03"
         "12563272x21312.32" | "267752473111.04"
-
     }
-
-
 }

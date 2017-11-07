@@ -1,11 +1,11 @@
 package tests
 
-
 import io.github.bonigarcia.wdm.ChromeDriverManager
 import objects.CalculatorPage
 import objects.ClassicCalculatorPage
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -20,7 +20,8 @@ class BaseSpec extends Specification {
 
     def setupSpec() {
         ChromeDriverManager.getInstance().setup()
-        driver = new ChromeDriver()
+        ChromeOptions opt = new ChromeOptions().setHeadless(true);
+        driver = new ChromeDriver(opt);
         calc = new CalculatorPage(driver)
         c_calc = new ClassicCalculatorPage(driver)
     }
@@ -28,5 +29,4 @@ class BaseSpec extends Specification {
     def cleanupSpec() {
         driver.quit();
     }
-
 }

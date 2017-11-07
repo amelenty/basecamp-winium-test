@@ -2,30 +2,32 @@ package objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.io.File;
 
 public class ClassicCalculatorPage {
 
-    private By button_0 = By.xpath("//input[@value='0']");
-    private By button_1 = By.xpath("//input[@value='1']");
-    private By button_2 = By.xpath("//input[@value='2']");
-    private By button_3 = By.xpath("//input[@value='3']");
-    private By button_4 = By.xpath("//input[@value='4']");
-    private By button_5 = By.xpath("//input[@value='5']");
-    private By button_6 = By.xpath("//input[@value='6']");
-    private By button_7 = By.xpath("//input[@value='7']");
-    private By button_8 = By.xpath("//input[@value='8']");
-    private By button_9 = By.xpath("//input[@value='9']");
-    private By button_plus = By.xpath("//input[@value='+']");
-    private By button_minus = By.xpath("//input[@value='-']");
-    private By button_divide = By.xpath("//input[@value='/']");
-    private By button_multiply = By.xpath("//input[@value='x']");
-    private By button_clear = By.xpath("//input[@value='C']");
-    private By button_dot = By.xpath("//input[@value='.']");
-    private By button_equal = By.xpath("//input[@value='=']");
-    private By result_box = By.cssSelector("#resultsbox");
+    private By button_0 = By.name("0");
+    private By button_1 = By.name("1");
+    private By button_2 = By.name("2");
+    private By button_3 = By.name("3");
+    private By button_4 = By.name("4");
+    private By button_5 = By.name("5");
+    private By button_6 = By.name("6");
+    private By button_7 = By.name("7");
+    private By button_8 = By.name("8");
+    private By button_9 = By.name("9");
+    private By button_plus = By.name("+");
+    private By button_minus = By.name("-");
+    private By button_divide = By.name("/");
+    private By button_multiply = By.name("x");
+    private By button_clear = By.name("C");
+    private By button_dot = By.name(".");
+    private By button_equal = By.name("=");
+    private By result_box = By.id("resultsbox");
 
     private WebDriver driver;
 
@@ -35,7 +37,7 @@ public class ClassicCalculatorPage {
 
     @Step
     public void click(String button) {
-        driver.findElement(By.xpath("//input[@value='" + button + "']")).click();
+        driver.findElement(By.name(button)).click();
     }
 
     @Step

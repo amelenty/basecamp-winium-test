@@ -17,23 +17,14 @@ public class CalculatorTest {
     @BeforeClass
     public static void start() {
         ChromeDriverManager.getInstance().setup();
-        //ChromeOptions opt = new ChromeOptions().setHeadless(true);
-        driver = new ChromeDriver();
-
+        ChromeOptions opt = new ChromeOptions().setHeadless(true);
+        driver = new ChromeDriver(opt);
     }
 
     @Before
     public void cleanup() {
-
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("calc.html").getFile());
-        driver.get("file:///" + file.getAbsolutePath());
-
-        //driver.get("file:///D:/work/GlobalLogic/Trainings/BootCamp/code/calc.html");
-
-        //driver.findElement(By.xpath("//input[@value='C']")).click();
+        driver.get("file:///" + getAppPath());
     }
-
 
     @Test
     public void add_test() {
@@ -73,11 +64,16 @@ public class CalculatorTest {
         Assert.assertEquals("2", driver.findElement(By.id("resultsbox")).getAttribute("value"));
     }
 
-
     @AfterClass
     public static void stop() {
         driver.quit();
     }
 
+    private final String getAppPath()
+    {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("calc.html").getFile());
+        return  file.getAbsolutePath();
+    }
 
 }
