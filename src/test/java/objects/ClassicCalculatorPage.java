@@ -2,6 +2,7 @@ package objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 import java.io.File;
 
@@ -32,88 +33,107 @@ public class ClassicCalculatorPage {
         this.driver = driver;
     }
 
-
+    @Step
     public void click(String button) {
         driver.findElement(By.xpath("//input[@value='" + button + "']")).click();
     }
 
+    @Step
     public void click(Keys key) {
         click(key.toString());
     }
 
+    @Step
     public void click_0() {
         driver.findElement(button_0).click();
     }
 
+    @Step
     public void click_1() {
         driver.findElement(button_1).click();
     }
 
+    @Step
     public void click_2() {
         driver.findElement(button_2).click();
     }
 
+    @Step
     public void click_3() {
         driver.findElement(button_3).click();
     }
 
+    @Step
     public void click_4() {
         driver.findElement(button_4).click();
     }
 
+    @Step
     public void click_5() {
         driver.findElement(button_5).click();
     }
 
+    @Step
     public void click_6() {
         driver.findElement(button_6).click();
     }
 
+    @Step
     public void click_7() {
         driver.findElement(button_7).click();
     }
 
+    @Step
     public void click_8() {
         driver.findElement(button_8).click();
     }
 
+    @Step
     public void click_9() {
         driver.findElement(button_9).click();
     }
 
+    @Step
     public void click_plus() {
         driver.findElement(button_plus).click();
     }
 
+    @Step
     public void click_minus() {
         driver.findElement(button_minus).click();
     }
 
+    @Step
     public void click_divide() {
         driver.findElement(button_divide).click();
     }
 
+    @Step
     public void click_multiply() {
         driver.findElement(button_multiply).click();
     }
 
+    @Step
     public void click_dot() {
         driver.findElement(button_dot).click();
     }
 
+    @Step
     public void click_equal() {
         driver.findElement(button_equal).click();
     }
 
+    @Step
     public void clear() {
         driver.findElement(button_clear).click();
     }
 
+    @Step
     public String getResult() {
         return driver.findElement(result_box).getAttribute("value");
     }
 
-
+    @Step
     public void open() {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("calc.html").getFile());
