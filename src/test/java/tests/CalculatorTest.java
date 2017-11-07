@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.io.File;
+
 
 public class CalculatorTest {
 
@@ -15,14 +17,21 @@ public class CalculatorTest {
     @BeforeClass
     public static void start() {
         ChromeDriverManager.getInstance().setup();
-        ChromeOptions opt = new ChromeOptions().setHeadless(true);
-        driver = new ChromeDriver(opt);
-        driver.get("file:///D:/work/GlobalLogic/Trainings/BootCamp/code/calc.html");
+        //ChromeOptions opt = new ChromeOptions().setHeadless(true);
+        driver = new ChromeDriver();
+
     }
 
     @Before
     public void cleanup() {
-        driver.findElement(By.xpath("//input[@value='C']")).click();
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("calc.html").getFile());
+        driver.get("file:///" + file.getAbsolutePath());
+
+        //driver.get("file:///D:/work/GlobalLogic/Trainings/BootCamp/code/calc.html");
+
+        //driver.findElement(By.xpath("//input[@value='C']")).click();
     }
 
 
