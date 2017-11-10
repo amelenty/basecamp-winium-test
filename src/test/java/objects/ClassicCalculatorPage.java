@@ -2,8 +2,6 @@ package objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.yandex.qatools.allure.annotations.Step;
 
 import java.io.File;
@@ -23,8 +21,8 @@ public class ClassicCalculatorPage {
     private By button_plus = By.name("+");
     private By button_minus = By.name("-");
     private By button_divide = By.name("/");
-    private By button_multiply = By.name("x");
-    private By button_clear = By.name("C");
+    private By button_multiply = By.name("*");
+    private By button_clear = By.name("Clear");
     private By button_dot = By.name(".");
     private By button_equal = By.name("=");
     private By result_box = By.id("resultsbox");
@@ -132,14 +130,7 @@ public class ClassicCalculatorPage {
 
     @Step
     public String getResult() {
-        return driver.findElement(result_box).getAttribute("value");
-    }
-
-    @Step
-    public void open() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("calc.html").getFile());
-        driver.get("file:///" + file.getAbsolutePath());
+        return driver.findElement(By.id("1000")).getText();
     }
 
 }

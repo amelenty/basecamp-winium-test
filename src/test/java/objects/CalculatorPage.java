@@ -4,15 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.yandex.qatools.allure.annotations.Step;
 
-import java.io.File;
 
 public class CalculatorPage {
 
-    WebDriver driver;
+    private WebDriver driver;
 
-    By resultBox = By.id("resultsbox");
-    By equal = By.name("=");
-    By clean = By.name("C");
+    private By equal = By.name("=");
+    private By clean = By.name("Clear");
 
     public CalculatorPage(WebDriver driver) {
         this.driver = driver;
@@ -21,17 +19,19 @@ public class CalculatorPage {
     @Step
     public String calculate(String expression) {
         for (int i = 0; i < expression.length(); i++) {
-            driver.findElement(By.name(""+ expression.charAt(i)+"")).click();
+            switch (expression.charAt(i)) {
+                case 'B':
+                    driver.findElement(By.name("Backspace")).click();
+                    break;
+                case 'C':
+                    driver.findElement(By.name("Clear")).click();
+                    break;
+                default:
+                    driver.findElement(By.name(""+ expression.charAt(i)+"")).click();
+            }
         }
         driver.findElement(equal).click();
-        return driver.findElement(resultBox).getAttribute("value");
-    }
-
-    @Step
-    public void open() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("calc.html").getFile());
-        driver.get("file:///" + file.getAbsolutePath());
+        return driver.findElement(By.id("1000")).getText();
     }
 
     @Step

@@ -14,14 +14,15 @@ public enum Keys {
     DIVIDE("/"),
     PLUS("+"),
     MINUS("-"),
-    MULTIPLY("x"),
-    CLEAR("C"),
+    MULTIPLY("*"),
+    CLEAR("Clear"),
+    BACKSPACE("Backspace"),
     EQUAL("="),
     DOT(".");
 
     private final String text;
 
-    private Keys(final String text) {
+    Keys(final String text) {
         this.text = text;
     }
 
